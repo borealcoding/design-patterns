@@ -2,7 +2,6 @@ package com.kreitek.pets.controllers;
 
 import com.kreitek.pets.Controller;
 import com.kreitek.pets.Logger;
-import com.kreitek.pets.domain.Cat;
 import com.kreitek.pets.domain.Dog;
 import com.kreitek.pets.infraestructure.bd.DbService;
 
@@ -25,10 +24,10 @@ public class DogController implements Controller {
         logger.debug("DogController.executeGet DOGS");
         DbService dbService = DbService.getInstance();
         List<Dog> dogs = dbService.getDogs();
-        String response = "";
+        StringBuilder response = new StringBuilder();
         for (Dog dog:dogs) {
-            response += dog.toString() + "\r\n";
+            response.append(dog.toString()).append("\r\n");
         }
-        return response;
+        return response.toString();
     }
 }

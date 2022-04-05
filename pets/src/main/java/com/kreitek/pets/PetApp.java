@@ -1,6 +1,5 @@
 package com.kreitek.pets;
 
-import com.kreitek.pets.Logger;
 import com.kreitek.pets.controllers.CatController;
 import com.kreitek.pets.controllers.ControllerFactory;
 import com.kreitek.pets.controllers.DogController;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 
 public class PetApp {
 
-    static Logger logger = Logger.getInstance();
+    private static final Logger logger = Logger.getInstance();
 
     public static void main (String[] args) {
         ControllerFactory controllerFactory = new ControllerFactory();

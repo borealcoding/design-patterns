@@ -25,10 +25,10 @@ public class CatController implements Controller {
         logger.debug("CatController.executeGet CATS");
         DbService dbService = DbService.getInstance();
         List<Cat> cats = dbService.getCats();
-        String response = "";
+        StringBuilder response = new StringBuilder();
         for (Cat cat:cats) {
-            response += cat.toString() + "\r\n";
+            response.append(cat.toString()).append("\r\n");
         }
-        return response;
+        return response.toString();
     }
 }
